@@ -112,12 +112,56 @@ textarea {
      background-image: url(../img/encabezado.jpg);
      height: 100vh;
      background-position: top center;
+     background-size: cover;
    }
-
-
-
-
-
+   div.contenido-header {
+     padding-top: 40px;
+     margin:
+   }
+   @media only screen and (min-width: 768px) {
+     div.contenido-header {
+       padding-top: 10px;
+     }
+   }
+   nav.redes-sociales {
+     text-align: center;
+   }
+   nav.redes-sociales a {
+     color: #ffffff;
+     font-size: 2.5em;
+     margin-right: 20px;
+   }
+   nav.redes-sociales a:last-child {
+     margin-right: 0px;
+   }
+   @media only screen and (min-width: 768px) {
+     div.informacion-eventos {
+       width: 70%;
+       margin: 0 auto;
+     }
+   }
+   div.informacion-eventos {
+     color: #ffffff;
+     text-align: center;
+     text-transform: uppercase;
+     font-size: 20px;
+   }
+   div.informacion-eventos p i{
+     margin-right: 15px;
+     color: #fe4918;
+     font-size: 30px;
+     }
+     p.fecha {
+       float: left;
+       text-align: left;
+     }
+     p.ciudad {
+       float: right;
+       text-align: right;
+     }
+     div.clearfix {
+            padding: 10px;
+     }
 
 
 
@@ -203,7 +247,7 @@ textarea {
 .clearfix:before,
 .clearfix:after {
     content: " "; /* 1 */
-    display: table; /* 2 */
+    display:block; /* 2 */
 }
 
 .clearfix:after {
