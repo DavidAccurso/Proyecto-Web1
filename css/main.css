@@ -222,10 +222,19 @@ textarea {
      }
      /* navegacion-principal */
      nav.navegacion-principal {
-       display: none;
+
      }
      nav.navegacion-principal a {
        font-family: 'Oswald', sans-serif;
+       color: #ffffff;
+       font-size: 1.3em;
+       text-transform: uppercase;
+       text-decoration: none;
+       transition: all .5s ease;
+       width: 100%;
+       display: block;
+       text-align: center;
+       margin-bottom: 20px;
      }
      @media only screen and (min-width: 768px) {
         nav.navegacion-principal {
@@ -235,29 +244,54 @@ textarea {
            display: block;
         }
         nav.navegacion-principal a {
-          color: #ffffff;
-          text-decoration: none;
-          margin-right: 10px;
           padding: 10px 10px;
-          text-transform: uppercase;
-          font-size: 1.3em;
-          transition: all .3s ease;
           display: inline-block;
+          width: auto;
+          text-align: center;
+          margin: 0 10px 0 0;
         }
         nav.navegacion-principal a:last-child {
           border: 2px solid #fe4918;
+          color: #fe4917;
         }
-     } /* media */
+        nav.navegacion-principal a:last-child:hover {
+          color: #ffffff;
+        }
+     } /* media 768*/
+     @media only screen and (max-width: 913px) and (min-width: 768px) {
+        nav.navegacion-principal a {
+          font-size: 1em;
+          padding: 6px 6px;
+        }
+     }
      nav.navegacion-principal a:hover {
          background:#fe4918;
      }
      nav.navegacion-principal a:last-child {
        margin-right: 0px;
      }
-
-
-
-
+     /* menu-movi */
+     div.menu-movi {
+       width: 60px;
+       display: block;
+       float: right;
+       text-align: right;
+       margin-top: 12px;
+     }
+     div.menu-movi:hover {
+       cursor: pointer;
+     }
+     div.menu-movi span {
+       height: 8px;
+       margin-bottom: 6px;
+       background-color: #ffffff;
+       display: block;
+     }
+     @media only screen and (min-width: 768px) {
+       div.menu-movi {
+         display: none;
+       }
+     }
      /* ==========================================================================
         Helper classes
         ========================================================================== */
