@@ -499,6 +499,9 @@ textarea {
        font-family: 'Oswald', sans-serif;
        font-size: 24px;
      }
+      ul.resumen-evento li:hover {
+        -webkit-filter: drop-shadow(3px 3px 10px white);
+      }
      @media only screen and (min-width: 768px) {
        ul.resumen-evento li{
          width: 25%;
@@ -510,6 +513,30 @@ textarea {
        display: block;
        margin: 0 0 10px 0;
      }
+    /*Tabla de precios*/
+    ul.lista-precios > li {
+      padding: 10px;
+    }
+    @media only screen and (min-width: 768px) {
+      ul.lista-precios > li {
+        float: left;
+        width: 33.33%;
+      }
+    }
+      div.tabla-precio{
+      border: 1px solid #e1e1e1;
+      background-color: #ffffff;
+      padding: 40px 0;
+      text-align: center;
+    }
+    div.tabla-precio ul li {
+      font-family: 'PT Sans', sans-serif;
+      font-size: 14px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      color: #868686;
+      line-height: 26px;
+    }
      /* ==========================================================================
         Helper classes
         ========================================================================== */
