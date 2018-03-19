@@ -135,6 +135,10 @@ textarea {
    p i , a i{
      margin-right: 5px;
    }
+   .button.hollow, .button.hollow:hover {
+     background-color: #ffffff;
+     color: #fe4918;
+   }
    .button {
      background-color: #fe4918;
      padding: 10px 40px;
@@ -147,6 +151,7 @@ textarea {
      display: inline-block;
      margin-top: 20px;
      transition: all .3s ease;
+     border: 2px solid #fe4918;
    }
    ul {
      list-style: none;
@@ -512,10 +517,15 @@ textarea {
        font-size: 4em;
        display: block;
        margin: 0 0 10px 0;
+       font-family: 'Oswald', sans-serif;
      }
     /*Tabla de precios*/
     ul.lista-precios > li {
       padding: 10px;
+      padding-right: 20px;
+    }
+    ul.lista-precios > li:last-child {
+      padding-right: 10px;
     }
     @media only screen and (min-width: 768px) {
       ul.lista-precios > li {
@@ -528,6 +538,12 @@ textarea {
       background-color: #ffffff;
       padding: 40px 0;
       text-align: center;
+      transition: all .3s ease;
+    }
+    div.tabla-precio:hover {
+      transform: scale(1.1);
+      border: 1px solid #fe4918;
+      box-shadow: 0px 0px 50px #666;
     }
     div.tabla-precio ul li {
       font-family: 'PT Sans', sans-serif;
@@ -536,6 +552,89 @@ textarea {
       text-transform: uppercase;
       color: #868686;
       line-height: 26px;
+    }
+    div.tabla-precio h3 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 16px;
+      text-transform: uppercase;
+    }
+    div.tabla-precio p.numero {
+      color: #000000;
+      margin:20px 0;
+    }
+    div.tabla-precio ul li i {
+      font-size: 20px;
+      color: green;
+      vertical-align: top;
+      padding: 0 5px;
+    }
+    /* Mapa */
+    div.mapa {
+      height: 420px;
+      background-color: green;
+    }
+    /* Testimoniales */
+    div.testimoniales {
+      padding: 20px;
+    }
+    div.testimonial {
+      padding: 5px;
+    }
+    @media only screen and (min-width:768px) {
+      div.testimonial {
+        float: left;
+        width: 33.3%;
+      }
+    }
+    blockquote {
+      border: 1px solid #e1e1e1;
+      background-color: #ffffff;
+      position: relative;
+      margin: 0 0 10px 0;
+      padding-bottom: 20px;
+    }
+    blockquote p {
+      text-align: justify!important;
+      font-size: 1em!important;
+      font-family: 'PT Sans',sans-serif;
+      padding: 0 20px 0 65px;
+    }
+    blockquote p::before {
+      content:'\201c';
+      position: absolute;
+      left: 13px;
+      top: 8px;
+      font-size: 8rem;
+      margin: 0;
+      padding: 0;
+      line-height: 1;
+      color: #fe4918;
+    }
+    footer.info-testimonial {
+      padding: 0;
+    }
+    footer.info-testimonial img {
+      border-radius: 50%;
+      width: 20%;
+      float: left;
+      margin-left: 20px;
+    }
+    footer.info-testimonial cite {
+      text-align: left;
+      color: #fe4918;
+      text-transform: uppercase;
+      font-size: 12px;
+      padding-top: 20px;
+      width: 66.6%;
+      float: right;
+      font-style: italic;
+      font-weight: bold;
+    }
+    footer.info-testimonial cite span {
+      color: #6c6c6c;
+      text-transform: none;
+      display: block;
+      margin-top: 5px;
     }
      /* ==========================================================================
         Helper classes
