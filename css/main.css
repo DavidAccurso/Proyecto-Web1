@@ -139,6 +139,14 @@ textarea {
      background-color: #ffffff;
      color: #fe4918;
    }
+   .button.transparent {
+     background-color: transparent;
+     border: 2px solid white;
+   }
+   .button.transparent:hover {
+     border: 2px solid #fe4918;
+     background-color: #fe4918;
+   }
    .button {
      background-color: #fe4918;
      padding: 10px 40px;
@@ -153,13 +161,13 @@ textarea {
      transition: all .3s ease;
      border: 2px solid #fe4918;
    }
+   .button:hover {
+     background-color: #e33000;
+   }
    ul {
      list-style: none;
      margin: 0;
      padding: 0;
-   }
-   .button:hover {
-     background-color: #e33000;
    }
    .float-rigth {
      float: right;
@@ -635,6 +643,30 @@ textarea {
       text-transform: none;
       display: block;
       margin-top: 5px;
+    }
+    div.newsletter {
+      position: relative;
+      height: auto;
+    }
+    div.newsletter::before {
+      background-image: url(../img/bg-newsletter.jpg);
+      content: '';
+    }
+    div.newsletter .contenido {
+      padding: 100px 0;
+      color: #ffffff;
+      text-align: center;
+      position: relative;
+    }
+    div.newsletter .contenido p{
+      text-transform: lowercase;
+      font-size: 1.2em;
+    }
+    div.newsletter .contenido h3{
+      color: #ffffff;
+      text-transform: uppercase;
+      font-size: 7vw;
+      font-family: 'PT Sans', sans-serif;
     }
      /* ==========================================================================
         Helper classes
