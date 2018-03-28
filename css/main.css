@@ -761,7 +761,7 @@ textarea {
       }
       .contenido-dia {
         padding: 20px;
-        /* display: none; */
+        display: none;
       }
       @media screen and (min-width: 768px) {
         .contenido-dia > div {

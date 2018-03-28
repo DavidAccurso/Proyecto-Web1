@@ -17,13 +17,38 @@
   var lista_productos = document.getElementById('Lista-productos');
   var suma = document.getElementById('suma-total');
   //calcularMontos
-  var regalo = document.getElementById('regalo')
+  var regalo = document.getElementById('regalo');
   var etiquetas = document.getElementById('etiquetas');
   var camisas = document.getElementById('camisa_evento');
 
-  calcular.addEventListener('click', calcularMontos)
-  pase_dia
+  calcular.addEventListener('click', calcularMontos);
+  pase_dia.addEventListener('blur', mostrarDias);
+  pase_dos_dias.addEventListener('blur',mostrarDias);
+  pase_completo.addEventListener('blur',mostrarDias);
 
+  function mostrarDias(){
+      var boletosDia = parseInt(pase_dia.value,10) || 0,
+          boletos2Dias = parseInt(pase_dos_dias.value,10) || 0,
+          boletoCompleto = parseInt(pase_completo.value,10) || 0;
+      var diasElegidos = [];
+      if (boletosDia > 0) {
+        diasElegidos.push('viernes');
+      }
+      if (boletos2Dias > 0) {
+        diasElegidos.push('viernes','sabado');
+      }
+      if (boletoCompleto > 0) {
+        diasElegidos.push('viernes','sabado','domingo');
+      }
+      //Los vuelvo a ocultar - Modificacion mia
+      document.getElementById('viernes').style.display = 'none';
+      document.getElementById('sabado').style.display = 'none';
+      document.getElementById('domingo').style.display = 'none';
+      //Los muestro si fueron seleccionados
+      for (var i = 0; i < diasElegidos.length; i++) {
+        document.getElementById(diasElegidos[i]).style.display = 'block';
+      }
+    }
   function calcularMontos(event) {
     event.preventDefault(); //Previene accion por defecto. Ej link no abre pag
     if (regalo.value === '') {
@@ -72,5 +97,5 @@
   } //Fin Function Boton calcular
 
 
-  }); //DOM CONTENT LOADED
+}); //DOM CONTENT LOADED
 })();
