@@ -822,6 +822,14 @@ textarea {
         text-align: center;
         color: #fe4918;
       }
+      #error {
+        clear: both;
+        padding: 20px;
+        text-align: center;
+        font-size: 1.3em;
+        display: none;
+        color: red;
+      }
      /* ==========================================================================
         Helper classes
         ========================================================================== */
