@@ -155,7 +155,36 @@ function initMap() {
       suma.innerHTML = "$ " + totalPagar.toFixed(2);
     }
   } //Fin Function Boton calcular
-
-
 }); //DOM CONTENT LOADED
 })();
+
+//Inicio de tabs para talleres conferencias y seminarios
+$(function() {
+  $('.programa-evento .info-curso:first').show();
+  $('.menu-programa a:first').addClass('activo');
+  $('.menu-programa a').on('click',function() {
+      $('.menu-programa a').removeClass('activo');//saca todos los activos
+      $(this).addClass('activo');//se agrega el q se dio click como activo
+      $('div.ocultar').fadeOut(200); //oculta todos
+      var enlace = $(this).attr('href')
+      $(enlace).fadeIn(500); //muestra el enlace presionado
+      return false; // para que no haga saltito al apretar click
+  });
+
+  //lettering
+  $('.nombre-sitio').lettering();
+
+  //animaciones para los numeros - plugin animateNumber
+  $('.resumen-evento li:nth-child(1) p').animateNumber({number:6},3000);
+  $('.resumen-evento li:nth-child(2) p').animateNumber({number:15},2000);
+  $('.resumen-evento li:nth-child(3) p').animateNumber({number:3},2500);
+  $('.resumen-evento li:nth-child(4) p').animateNumber({number:9},3000);
+
+  //animacion cuenta regresiva - plugin countdown
+  $('.cuenta-regresiva').countdown('2018/11/29 09:00:00', function (event) {
+    $('#dias').html(event.strftime('%D'));
+    $('#horas').html(event.strftime('%H'));
+    $('#minutos').html(event.strftime('%M'));
+    $('#segundos').html(event.strftime('%S'));
+  })
+});
