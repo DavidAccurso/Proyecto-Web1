@@ -308,6 +308,14 @@ textarea {
        }
     }
      /* Barra */
+     .fixed{
+       position: fixed;
+       width: 100%;
+       top: 0;
+       left: 0;
+       z-index: 2;
+     }
+
      div.barra {
        background-color: #353535;
        padding: 20px 0;
@@ -326,7 +334,8 @@ textarea {
      }
      /* navegacion-principal */
      nav.navegacion-principal {
-
+       display: none;
+       width: 100%;
      }
      nav.navegacion-principal a {
        font-family: 'Oswald', sans-serif;
@@ -339,6 +348,14 @@ textarea {
        display: block;
        text-align: center;
        margin-bottom: 20px;
+       clear: both;
+     }
+     nav.navegacion-principal a:last-child {
+       border: 2px solid #fe4918;
+       color: #fe4917;
+     }
+     nav.navegacion-principal a:last-child:hover {
+       color: #ffffff;
      }
      @media only screen and (min-width: 768px) {
         nav.navegacion-principal {
@@ -353,13 +370,6 @@ textarea {
           width: auto;
           text-align: center;
           margin: 0 10px 0 0;
-        }
-        nav.navegacion-principal a:last-child {
-          border: 2px solid #fe4918;
-          color: #fe4917;
-        }
-        nav.navegacion-principal a:last-child:hover {
-          color: #ffffff;
         }
      } /* media 768*/
      @media only screen and (max-width: 913px) and (min-width: 768px) {
@@ -573,9 +583,6 @@ textarea {
        font-family: 'Oswald', sans-serif;
        font-size: 24px;
      }
-      ul.resumen-evento li:hover {
-        -webkit-filter: drop-shadow(3px 3px 10px white);
-      }
      @media only screen and (min-width: 768px) {
        ul.resumen-evento li{
          width: 25%;
