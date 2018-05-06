@@ -1,4 +1,4 @@
-      <footer class="site-footer">
+<footer class="site-footer">
         <div class="contenedor clearfix">
           <div class="footer-informacion">
             <h3>Sobre <span>gldwebcamp</span> </h3>
@@ -34,7 +34,7 @@
         <script src="js\PluginAnimacion.js"></script>
         <script src="js\CountDown.js"></script>
         <script src="js\jquery.lettering.js"></script>
-        <script src="js\jquery.waypoints.js"></script>
+        <script src="js\lightbox.js"></script>
         <script src="js/main.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAc6M-e4Wqzmt01R3dXot6J928B69z2078&callback=initMap"
         async defer></script>
