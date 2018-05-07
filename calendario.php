@@ -23,6 +23,7 @@
             <?php 
                 $calendario = array();
                 while($eventos = $resultado->fetch_assoc() ){ 
+                    $fecha = $eventos['fecha_evento'];
                     $evento = array(
                         'titulo' => $eventos['nombre_evento'],
                         'fecha' => $eventos['fecha_evento'],
@@ -30,7 +31,7 @@
                         'categoria' => $eventos['cat_evento'],
                         'invitado' => $eventos['nombre_invitado'] . " " . $eventos['apellido_invitado'] );      
 
-                    $calendario[] = $evento;
+                    $calendario[$fecha][] = $evento;
             ?>
             <?php } //FIN WHILE de fetch_assoc ?>
             <pre>
