@@ -1,4 +1,4 @@
-<?php include_once 'includes/templates/header.php' ?>
+<?php include_once 'includes/templates/header.php'; ?>
 
     <section class="seccion contenedor">
         <h2>Calendario Eventos</h2>
@@ -12,7 +12,7 @@
                 $sql .= " ON eventos.id_cat_evento = categoria_evento.id_categoria ";
                 $sql .= " INNER JOIN invitados ";
                 $sql .= " ON eventos.id_inv = invitados.invitado_id ";
-                $sql .= " ORDER BY eventos.evento_id " ;//tira error :S
+                $sql .= " ORDER BY eventos.evento_id; ";
                 $resultado = $conn->query($sql);
             }
             catch (\Excepcion $e) {
@@ -30,10 +30,17 @@
                         'hora' => $eventos['hora_evento'],
                         'categoria' => $eventos['cat_evento'],
                         'invitado' => $eventos['nombre_invitado'] . " " . $eventos['apellido_invitado'] );      
-
-                    $calendario[$fecha][] = $evento;
+                    $calendario[$fecha][] = $evento; 
+                 }; //FIN WHILE de fetch_assoc 
             ?>
-            <?php } //FIN WHILE de fetch_assoc ?>
+            <?php foreach ($calendario as $dia => $lista_eventos) { ?>
+                <h3>
+                    <i class="fa fa-calendar"></i>
+                    <?php 
+                        setlocale(LC_TIME, 'spanish');
+                        echo strftime("%A, %d de %B del %Y", strtotime($dia)); ?>
+                </h3>
+            <?php  }?>
             <pre>
                     <?php var_dump($calendario); ?>
             </pre>
@@ -41,4 +48,4 @@
     </section>
 
     <?php $conn->close(); ?>
-<?php include_once 'includes/templates/footer.php' ?>
+<?php include_once 'includes/templates/footer.php'; ?>
