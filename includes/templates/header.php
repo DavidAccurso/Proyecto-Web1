@@ -23,11 +23,11 @@
         <div class="hero">
           <div class="contenido-header">
             <nav class="redes-sociales">
-              <a href="#"><i class="fab fa-facebook-f"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-              <a href="#"><i class="fab fa-pinterest"></i></a>
-              <a href="#"><i class="fab fa-youtube"></i></a>
-              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="http:\\www.facebook.com"><i class="fab fa-facebook-f"></i></a>
+              <a href="http:\\www.twitter.com"><i class="fab fa-twitter"></i></a>
+              <a href="http:\\www.pinterest.com"><i class="fab fa-pinterest"></i></a>
+              <a href="http:\\www.youtube.com.ar"><i class="fab fa-youtube"></i></a>
+              <a href="http:\\www.instagram.com"><i class="fab fa-instagram"></i></a>
             </nav> <!-- nav.redes-sociales -->
             <div class="informacion-evento clearfix">
               <div class="clearfix">
@@ -54,7 +54,7 @@
                 <nav class="navegacion-principal clearfix">
                   <a href="conferencia.php" class="activo">Conferencia</a>
                   <a href="calendario.php">Calendario</a>
-                  <a href="#">Invitados</a>
+                  <a href="invitados.php">Invitados</a>
                   <a href="registro.php">Reservaciones</a>
                 </nav>
               </div> <!-- .contenedor -->

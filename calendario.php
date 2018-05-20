@@ -36,20 +36,20 @@
             ?>
             <?php foreach ($calendario as $dia => $lista_eventos) { ?>
                 <h3>
-                    <i class="fa fa-calendar"></i>
+                    <i class="fa fa-calendar">
                     <?php 
                         setlocale(LC_TIME, 'spanish');
                         echo utf8_encode(strftime("%A, %d de %B del %Y", strtotime($dia)));//utf8_encode() hace que el texto
                         //que se pasa como parametro se muestre correctamente si lleva ñ o acentos
-                    ?>
+                    ?></i>
                 </h3>
                 <?php
                     foreach ($lista_eventos as $evento) { ?>
-                        <div class="dia">
+                        <div class="dia clearfix">
                             <p class="titulo"><?php echo utf8_encode($evento['titulo']); ?></p>
                             <p class="hora"><i class="far fa-clock" aria-hidden="true"></i><?php echo $evento['fecha'] . " - " . $evento['hora']; ?></p>
                             <p><i class="<?php echo $evento['icono']; ?>" aria-hidden="true"></i><?php echo $evento['categoria']; ?></p>
-                            <p class="invitado"><i class="far fa-user"></i><?php echo $evento['invitado']; ?></p>
+                            <p class="invitado"><i class="far fa-user" aria-hidden="true"></i><?php echo $evento['invitado']; ?></p>
                         </div>
                 <?php }; //Fin foreach eventos?>
             <?php  };//Fin foreach dias?>
