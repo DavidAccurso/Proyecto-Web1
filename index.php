@@ -212,7 +212,6 @@
           <a href="#" class="button transparent">registro</a>
         </div> <!-- .contenido .contenedor -->
       </div> <!-- .newsletter .parallax -->
-
       <section class="seccion">
         <h2>Faltan</h2>
         <div class="cuenta-regresiva clearfix contenedor">

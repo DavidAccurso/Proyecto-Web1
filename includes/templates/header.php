@@ -16,6 +16,7 @@
         <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css\colorbox.css">
     </head>
     <body class="conferencia">
 

@@ -11,23 +11,23 @@
             }
             catch (\Excepcion $e) {
                    echo $e->getMessage();
+                   $error = $e->getMessage();
             }
         ?>
         <div class="invitados">
-            <?php 
-                $calendario = array();
-                while($eventos = $resultado->fetch_assoc() ){ 
-                    //$fecha = $eventos['fecha_evento'];
-                    $evento = array(
-                        'id' => $eventos['invitado_id'],
-                        'nombre' => $eventos['nombre_invitado'],
-                        'apellido' => $eventos['apellido_invitado'],
-                        'descripcion' => $eventos['descripcion'],
-                        'url' => $eventos['url_imagen']);      
-                    //$calendario[$fecha][] = $evento; 
-                 }; //FIN WHILE de fetch_assoc 
-            ?>
-        </div> <!-- .calendario -->
+            <section class="invitados contenedor seccion">
+                <h2>Nuestros invitados</h2>
+                <ul class="lista-invitados clearfix">
+                    <?php while($invitados = $resultado->fetch_assoc() ){ ?>                       
+                         <li>
+                            <div class="invitado">
+                                <img src="img/<?php echo $invitados["url_imagen"]; ?>" alt="imagen invitado">
+                                <p><?php echo $invitados["nombre_invitado"] . " " . $invitados["apellido_invitado"]; ?></p>
+                            </div>
+                        </li>
+                <?php }; ?>
+                </ul>
+            </section> <!-- .invitados .contenedor .seccion -->
     </section>
     <?php $conn->close(); ?>
 <?php include_once 'includes/templates/footer.php'; ?>

@@ -25,7 +25,6 @@
         </div>
         <p class="copyright">Todos los derechos Reservados GDLWEBCAMP 2016.</p>
       </footer>
-
       <!-- Codigo generado por html5-boilerplate -->
         <script src="js/vendor/modernizr-3.5.0.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
@@ -36,6 +35,7 @@
         <script src="js\jquery.lettering.js"></script>
         <script src="js\lightbox.js"></script>
         <script src="js/main.js"></script>
+        <script src="js/jquery.colorbox-min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAc6M-e4Wqzmt01R3dXot6J928B69z2078&callback=initMap"
         async defer></script>
 
