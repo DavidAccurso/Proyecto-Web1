@@ -209,13 +209,17 @@ $(function() {
     }, {
       offset: '60%'//cuando se llega al 60% visible del objeto
     });
-  }
+  };
 
   //animacion cuenta regresiva - plugin countdown
-  $('.cuenta-regresiva').countdown('2018/11/29 09:00:00', function (event) {
+  $('.cuenta-regresiva').countdown('2019/11/29 09:00:00', function (event) {
     $('#dias').html(event.strftime('%D'));
     $('#horas').html(event.strftime('%H'));
     $('#minutos').html(event.strftime('%M'));
     $('#segundos').html(event.strftime('%S'));
-  })
+  });
+
+  // ColorBox
+  $('.invitado-info').colorbox({inline:true,width:"60%"});
+
 });

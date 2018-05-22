@@ -32,18 +32,25 @@
         <script src="js/plugins.js"></script>
         <script src="js\PluginAnimacion.js"></script>
         <script src="js\CountDown.js"></script>
-        <script src="js\jquery.lettering.js"></script>
-        <script src="js\lightbox.js"></script>
-        <script src="js/main.js"></script>
-        <script src="js/jquery.colorbox-min.js"></script>
+        <script src="js\jquery.lettering.js"></script>       
+        <?php 
+        //carga los archivos de forma condicional
+            $archivo = basename($_SERVER['PHP_SELF']);
+            $pagina = str_replace(".php","",$archivo);
+            if ($pagina == 'invitados' || $pagina == 'index') {
+              echo '<script src="js/jquery.colorbox-min.js"></script>';
+            } else if($pagina == 'conferencia') {
+              echo '<script src="js\lightbox.js"></script>';
+            };
+        ?>           
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAc6M-e4Wqzmt01R3dXot6J928B69z2078&callback=initMap"
         async defer></script>
-
         <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
         <script>
             window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
             ga('create','UA-XXXXX-Y','auto');ga('send','pageview')
         </script>
         <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+        <script src="js/main.js"></script>    
     </body>
 </html>

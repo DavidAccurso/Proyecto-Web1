@@ -9,14 +9,21 @@
 
         <link rel="manifest" href="site.webmanifest">
         <link rel="apple-touch-icon" href="icon.png">
-        <!-- Place favicon.ico in the root directory -->
-
+        
         <link rel="stylesheet" href="css/normalize.css">
-        <link rel="stylesheet" href="css\lightbox.css">
         <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Oswald|PT+Sans" rel="stylesheet">
+        <?php 
+            //carga los archivos de forma condicional
+            $archivo = basename($_SERVER['PHP_SELF']);
+            $pagina = str_replace(".php","",$archivo);
+            if ($pagina == 'invitados' || $pagina == 'index') {
+              echo '<link rel="stylesheet" href="css\colorbox.css">';
+            } else if($pagina == 'conferencia') {
+              echo '<link rel="stylesheet" href="css\lightbox.css">';
+            }
+        ?>
         <link rel="stylesheet" href="css/main.css">
-        <link rel="stylesheet" href="css\colorbox.css">
     </head>
     <body class="conferencia">
 
@@ -45,7 +52,7 @@
             <div class="barra">
               <div class="contenedor clearfix">
                 <div class="logo">
-                  <img src="img/logo.svg" alt="imagen logo">
+                <a href="index.php"><img src="img/logo.svg" alt="imagen logo"></a>
                 </div> <!-- .logo -->
                 <div class="menu-movi">
                   <span></span>

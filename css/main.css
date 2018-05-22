@@ -954,6 +954,12 @@ textarea {
          text-align: center;
          padding: 10px 0;
        }
+       /* colorBox*/
+       div.cboxElement {
+         padding: 30px;
+         text-align: center;
+       }
+
      /* ==========================================================================
         Helper classes
         ========================================================================== */
