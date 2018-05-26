@@ -74,47 +74,9 @@
         </div> <!-- .contenido-programa .contenedor -->
       </section> <!-- FIN SECCION .PROGRAMA -->
 
-      <section class="invitados contenedor seccion">
-        <h2>Nuestros invitados</h2>
-        <ul class="lista-invitados clearfix">
-          <li>
-            <div class="invitado">
-              <img src="img/invitado1.jpg" alt="imagen invitado">
-              <p>Rafaek Bautista</p>
-            </div>
-          </li>
-          <li>
-            <div class="invitado">
-              <img src="img/invitado2.jpg" alt="imagen invitado">
-              <p>Shari Herrera</p>
-            </div>
-          </li>
-          <li>
-            <div class="invitado">
-              <img src="img/invitado3.jpg" alt="imagen invitado">
-              <p>Susana Rivera</p>
-            </div>
-          </li>
-          <li>
-            <div class="invitado">
-              <img src="img/invitado4.jpg" alt="imagen invitado">
-              <p>Harold Garcia</p>
-            </div>
-          </li>
-          <li>
-            <div class="invitado">
-              <img src="img/invitado5.jpg" alt="imagen invitado">
-              <p>Susan Sanchez</p>
-            </div>
-          </li>
-          <li>
-            <div class="invitado">
-              <img src="img/invitado6.jpg" alt="imagen invitado">
-              <p>Rafaek Bautista</p>
-            </div>
-          </li>
-        </ul>
-      </section> <!-- .invitados .contenedor .seccion -->
+      <!-- carga 'div.invitados' 'section.invitados contenedor seccion'-->
+      <?php include_once 'includes/templates/invitados.php'; ?> 
+
       <div class="contador parallax">
         <div class="contenedor">
           <ul class="resumen-evento clearfix">

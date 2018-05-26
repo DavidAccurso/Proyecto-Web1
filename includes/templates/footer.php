@@ -32,7 +32,8 @@
         <script src="js/plugins.js"></script>
         <script src="js\PluginAnimacion.js"></script>
         <script src="js\CountDown.js"></script>
-        <script src="js\jquery.lettering.js"></script>       
+        <script src="js\jquery.lettering.js"></script>
+        <script src="js\jquery.waypoints.js"></script>       
         <?php 
         //carga los archivos de forma condicional
             $archivo = basename($_SERVER['PHP_SELF']);

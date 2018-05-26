@@ -201,11 +201,11 @@ $(function() {
   //se le aplica a un objeto, en este caso resumen-Evento
   var resumenLista = $('.resumen-evento');
   if (resumenLista.length > 0) {
-    $('.resumen-evento').waypoint(function() { //ejecuta esta funcion cuando cumple
-      $('.resumen-evento li:nth-child(1) p').animateNumber({number:6},3000);
-      $('.resumen-evento li:nth-child(2) p').animateNumber({number:15},2000);
-      $('.resumen-evento li:nth-child(3) p').animateNumber({number:3},2500);
-      $('.resumen-evento li:nth-child(4) p').animateNumber({number:9},3000);
+    resumenLista.waypoint(function() { //ejecuta esta funcion cuando cumple
+      $('.resumen-evento li:nth-child(1) p').animateNumber({number:6},4000);
+      $('.resumen-evento li:nth-child(2) p').animateNumber({number:15},2500);
+      $('.resumen-evento li:nth-child(3) p').animateNumber({number:3},3500);
+      $('.resumen-evento li:nth-child(4) p').animateNumber({number:9},3800);
     }, {
       offset: '60%'//cuando se llega al 60% visible del objeto
     });
