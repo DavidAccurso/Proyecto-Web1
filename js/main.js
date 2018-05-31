@@ -175,6 +175,11 @@ $(function() {
   //lettering
   $('.nombre-sitio').lettering();
 
+  //agregar clase a menu
+  $('body.conferencia .navegacion-principal a:contains("Conferencia")').addClass('activo');
+  $('body.calendario .navegacion-principal a:contains("Calendario")').addClass('activo');
+  $('body.invitados .navegacion-principal a:contains("Invitados")').addClass('activo');
+  $('body.reservaciones .navegacion-principal a:contains("Reservaciones")').addClass('activo');
   // Menu Fijo
   var windowHeight = $(window).height(); //alto de la ventana
   var barraAltura = $('div.barra').innerHeight();

@@ -295,6 +295,7 @@ textarea {
        text-align: right;
    }
    p.slogan {
+       margin-top: 20px!important;
        text-transform: none!important;
    }
    p.slogan span {
@@ -786,7 +787,7 @@ textarea {
       }
       /** INTERNAS **/
       /* Conferencia */
-      body.conferencia .navegacion-principal .activo{
+      .navegacion-principal .activo{
         border-bottom: 2px solid #fe4918;
       }
       div.galeria {

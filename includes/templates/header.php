@@ -25,8 +25,7 @@
         ?>
         <link rel="stylesheet" href="css/main.css">
     </head>
-    <body class="conferencia">
-
+    <body class="<?php echo $pagina; ?>"> 
       <header class="site-header">
         <div class="hero">
           <div class="contenido-header">
@@ -48,23 +47,22 @@
           </div> <!-- -contenido-header -->
         </div> <!-- .hero -->
       </header>
-
-            <div class="barra">
-              <div class="contenedor clearfix">
-                <div class="logo">
-                <a href="index.php"><img src="img/logo.svg" alt="imagen logo"></a>
-                </div> <!-- .logo -->
-                <div class="menu-movi">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div> <!-- .menu-movi -->
-                <nav class="navegacion-principal clearfix">
-                  <a href="conferencia.php" class="activo">Conferencia</a>
-                  <a href="calendario.php">Calendario</a>
-                  <a href="invitados.php">Invitados</a>
-                  <a href="registro.php">Reservaciones</a>
-                </nav>
-              </div> <!-- .contenedor -->
-            </div> <!-- .barra -->
+      <div class="barra">
+        <div class="contenedor clearfix">
+          <div class="logo">
+          <a href="index.php"><img src="img/logo.svg" alt="imagen logo"></a>
+          </div> <!-- .logo -->
+          <div class="menu-movi">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div> <!-- .menu-movi -->
+          <nav class="navegacion-principal clearfix">
+            <a href="conferencia.php">Conferencia</a>
+            <a href="calendario.php">Calendario</a>
+            <a href="invitados.php">Invitados</a>
+            <a href="registro.php">Reservaciones</a>
+          </nav>
+        </div> <!-- .contenedor -->
+      </div> <!-- .barra -->
       

@@ -1,4 +1,4 @@
-<?php include_once 'includes/templates/header.php' ?>
+º<?php include_once 'includes/templates/header.php' ?>
 
       <section class="seccion contenedor">
         <h2>La mejor conferencia de diseño web en español</h2>
@@ -15,67 +15,88 @@
         </div> <!-- .contenedor-video -->
         <div class="contenido-programa contenedor">
           <div class="programa-evento">
-              <h2>Programa del Evento</h2>
+          <h2>Programa del Evento</h2>
+              <?php
+                try {
+                    require_once 'includes/funciones/bd_conexion.php';
+                    $sql = "SELECT * FROM `categoria_evento`";
+                    $resultado = $conn->query($sql);
+                }
+                catch(Exception $e) {
+                    $error = $e->getMessage();
+                }
+              ?>
               <nav class="menu-programa">
-                <a href="#talleres"><i class="fa fa-code"></i>Talleres</a>
-                <a href="#conferencias"><i class="fa fa-comment"></i>Conferencias</a>
-                <a href="#seminarios"><i class="fa fa-university"></i>Seminarios</a>
-              </nav>
+              <?php while($cat = $resultado->fetch_assoc()) { ?>
+                <?php $categoria = $cat['cat_evento']; ?>
+                <a href="# <?php echo strtolower($categoria); ?>">
+                <i class="fa <?php echo $cat['icono']; ?>"></i><?php echo $categoria; ?></a>
+                <?php } ?>
+              </nav> <!-- nav.menu-programa -->
 
-              <div id="talleres" class="info-curso ocultar clearfix">
-                  <div class="detalle-evento">
-                      <h3>HTML5, CSS3 y JavaScript</h3>
-                      <p><i class="far fa-clock"></i>16:00 hs</p>
-                      <p><i class="far fa-calendar-alt"></i>12 de Dic</p>
-                      <p><i class="fa fa-user"></i>Davidsinhio de la torre</p>
-                  </div>
-                  <div class="detalle-evento">
-                      <h3>Responsive Web Design</h3>
-                      <p><i class="far fa-clock"></i>20:00 hs</p>
-                      <p><i class="far fa-calendar-alt"></i>12 de Dic</p>
-                      <p><i class="fa fa-user"></i>Popeye el marino</p>
-                  </div>
-                  <a href="#" class="button float-rigth">Ver todos</a>
-              </div> <!-- talleres  -->
+              <?php
+                  try {
+                      require_once('includes/funciones/bd_conexion.php');
+                      $sql = "SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, icono, nombre_invitado, apellido_invitado ";
+                      $sql .= " FROM eventos ";
+                      $sql .= " INNER JOIN categoria_evento ";
+                      $sql .= " ON eventos.id_cat_evento = categoria_evento.id_categoria ";
+                      $sql .= " INNER JOIN invitados ";
+                      $sql .= " ON eventos.id_inv = invitados.invitado_id ";
+                      $sql .= " WHERE `eventos`.`id_cat_evento` = 1 "
+                      $sql .= " ORDER BY eventos.evento_id LIMIT 2; ";
+                      $sql .= " SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, icono, nombre_invitado, apellido_invitado ";
+                      $sql .= " FROM eventos ";
+                      $sql .= " INNER JOIN categoria_evento ";
+                      $sql .= " ON eventos.id_cat_evento = categoria_evento.id_categoria ";
+                      $sql .= " INNER JOIN invitados ";
+                      $sql .= " ON eventos.id_inv = invitados.invitado_id ";
+                      $sql .= " WHERE `eventos`.`id_cat_evento` = 2 "
+                      $sql .= " ORDER BY eventos.evento_id LIMIT 2; ";
+                      $sql .= " SELECT evento_id, nombre_evento, fecha_evento, hora_evento, cat_evento, icono, nombre_invitado, apellido_invitado ";
+                      $sql .= " FROM eventos ";
+                      $sql .= " INNER JOIN categoria_evento ";
+                      $sql .= " ON eventos.id_cat_evento = categoria_evento.id_categoria ";
+                      $sql .= " INNER JOIN invitados ";
+                      $sql .= " ON eventos.id_inv = invitados.invitado_id ";
+                      $sql .= " WHERE `eventos`.`id_cat_evento` = 3 "
+                      $sql .= " ORDER BY eventos.evento_id LIMIT 2; ";
+                      $conn->multi_query($sql);
+                  }
+                  catch (\Excepcion $e) {
+                         echo $e->getMessage();
+                  }
+              ?>
+              <?php
+                do {
+                  $resultado = $conn->store_result();
+                  $row = $resultado->fetch_assoc(MYSQLI_ASSOC); ?>
 
-              <div id="conferencias" class="info-curso ocultar clearfix">
-                  <div class="detalle-evento">
-                      <h3>Como ser Freelancer</h3>
-                      <p><i class="far fa-clock"></i>10:00 hs</p>
-                      <p><i class="far fa-calendar-alt"></i>10 de Dic</p>
-                      <p><i class="fa fa-user"></i>Gregorio De la Cruz</p>
-                  </div>
-                  <div class="detalle-evento">
-                      <h3>Tecnologías del futuro</h3>
-                      <p><i class="far fa-clock"></i>16:00 hs</p>
-                      <p><i class="far fa-calendar-alt"></i>10 de Dic</p>
-                      <p><i class="fa fa-user"></i>Susana Gimenez</p>
-                  </div>
-                  <a href="#" class="button float-rigth">Ver todos</a>
-              </div> <!-- conferencias -->
-
-              <div id="seminarios" class="info-curso ocultar clearfix">
-                  <div class="detalle-evento">
-                      <h3>Aprender a programar en minutos</h3>
-                      <p><i class="far fa-clock"></i>13:00 hs</p>
-                      <p><i class="far fa-calendar-alt"></i>11 de Dic</p>
-                      <p><i class="fa fa-user"></i>El oso Arturo</p>
-                  </div>
-                  <div class="detalle-evento">
-                      <h3>Diseño UI/UX para móviles</h3>
-                      <p><i class="far fa-clock"></i>17:00 hs</p>
-                      <p><i class="far fa-calendar-alt"></i>11 de Dic</p>
-                      <p><i class="fa fa-user"></i>Marcelo Tinelli</p>
-                  </div>
-                  <a href="#" class="button float-rigth">Ver todos</a>
-              </div> <!-- seminarios -->
-
+                  <?php $i = 0; ?>
+                  <?php foreach($row as $evento): ?>
+                      <?php if($i % 2 == 0) { ?>
+                        <div id="<?php echo strtolower($evento['cat_evento']) ?>" class="info-curso ocultar clearfix">
+                      <?php } ?>
+                            <div class="detalle-evento">
+                                <h3><?php utf8_encode($evento['nombre_evento']) ?></h3>
+                                <p><i class="far fa-clock"></i><?php echo $evento['hora_evento']; ?></p>
+                                <p><i class="far fa-calendar-alt"></i><?php echo $evento['fecha_evento']; ?></p>
+                                <p><i class="fa fa-user"></i><?php echo $evento['nombre_invitado']; ?></p>
+                            </div>
+                      <?php if($i % 2 == 1): ?>
+                          </div> <!-- talleres  -->
+                          <a href="#" class="button float-rigth">Ver todos</a>
+                      <?php endif; ?>
+                      <?php $i++; ?>
+                  <?php endforeach; ?>
+                <?php } while($conn->more_results() && $conn->next_result()); ?>
+                <?php $resultado->free(); ?>
           </div> <!-- .programa-evento -->
         </div> <!-- .contenido-programa .contenedor -->
       </section> <!-- FIN SECCION .PROGRAMA -->
 
       <!-- carga 'div.invitados' 'section.invitados contenedor seccion'-->
-      <?php include_once 'includes/templates/invitados.php'; ?> 
+      <?php include_once 'includes/templates/invitados.php'; ?>
 
       <div class="contador parallax">
         <div class="contenedor">
